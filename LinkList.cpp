@@ -152,7 +152,32 @@ public:
 			temp = temp->getNext();
 		}
 	}
+	int getNthElement(int n)//To get nth term
+	{
+		int lenght = getLenght();
+		if (n <= lenght)
+		{
+			if (n == 1)
+			{
+				return head->getData();
+			}
+			else
+			{
+				Node* temp = head;
+				for (int i = 0; i < n-1; i++)
+				{
+					temp = temp->getNext();
+				}
+				return temp->getData();
+			}
+		}
+		else
+		{
+			cout << n << " term is out of range of size of this Linked List.";
+			return NULL;
+		}
 
+	}
 };
 int main()
 {
@@ -195,5 +220,19 @@ int main()
 
 	cout << "\nFirst element in list is " << l1.getFirstElement();
 	cout << "\nLast element in list is " << l1.getLastElement();
+	
+	cout << endl;
+	int nth = l1.getNthElement(3);
+		if (nth != NULL)
+	{
+		cout << "3rd term is " << nth;
+	}
+		
+		cout << endl;
+		nth = l1.getNthElement(45);
+		if (nth != NULL)
+		{
+			cout << "45th term is " << nth;
+		}
 	return 0;
 }
