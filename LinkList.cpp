@@ -114,6 +114,13 @@ public:
 		else
 		{
 			int lenght = getLenght();
+			if (lenght == 1)
+			{
+				delete head;
+				head = NULL;
+				return true;
+			}
+			
 			Node* temp = head;
 			while (temp->getNext() != NULL)
 			{
