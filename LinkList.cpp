@@ -142,6 +142,9 @@ public:
 	}
 	int getLastElement()
 	{
+		if (isEmpty())
+			return NULL;
+		
 		Node* last = head;
 		while (last->getNext() != NULL)
 		{
