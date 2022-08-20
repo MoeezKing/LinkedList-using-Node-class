@@ -158,9 +158,10 @@ public:
 		Node* temp=head;
 		while (temp != NULL)
 		{
-			cout << temp->getData() << endl;
+			cout << temp->getData() << "-->";
 			temp = temp->getNext();
 		}
+		cout<<"NULL\n";
 	}
 	int getNthElement(int n)//To get nth term
 	{
@@ -187,6 +188,48 @@ public:
 			return NULL;
 		}
 
+	}
+	void sortAscending()
+	{
+	    int length=getLenght();
+	    int *array=new int[length];
+	    
+	    for(int i=0;i<length;i++)
+	    {
+	        array[i]=getFirstElement();
+	        removeFromBeginning();
+	    }
+	    
+	    for(int i=0;i<length;i++)
+	    {
+	        for(int o=0;o<length-1;o++)
+	        if(array[o]>array[o+1])
+	        swap(array[o],array[o+1]);
+	    }
+	    
+	    for(int i=0;i<length;i++)
+	    insertAtLast(array[i]);
+	}
+	void sortDescending()
+	{
+	    int length=getLenght();
+	    int *array=new int[length];
+	    
+	    for(int i=0;i<length;i++)
+	    {
+	        array[i]=getFirstElement();
+	        removeFromBeginning();
+	    }
+	    
+	    for(int i=0;i<length;i++)
+	    {
+	        for(int o=0;o<length-1;o++)
+	        if(array[o]>array[o+1])
+	        swap(array[o],array[o+1]);
+	    }
+	    
+	    for(int i=0;i<length;i++)
+	    insertAtBeginning(array[i]);
 	}
 };
 int main()
