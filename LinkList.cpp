@@ -231,6 +231,22 @@ public:
 	    for(int i=0;i<length;i++)
 	    insertAtBeginning(array[i]);
 	}
+	bool reverse()
+	{
+	    if(isEmpty())
+	    {
+	        return false;
+	    }
+	    int lenght=getLenght();
+	    LinkedList l2;
+	    for(int i=1;i<=lenght;i++)
+	    {
+	        l2.insertAtLast(getLastElement());
+	        removeFromLast();
+	    }
+	    head=l2.getHead();
+	    return true;
+	}
 };
 int main()
 {
