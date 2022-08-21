@@ -247,6 +247,46 @@ public:
 	    head=l2.getHead();
 	    return true;
 	}
+	void sortAscending2()
+  {
+    int length = getLenght ();
+    for (int i = 1; i <= length; i++)
+      {
+	Node *n1 = head;
+	Node *n2 = head->getNext ();
+	for (int o = 1; o <length; o++)
+	  {
+	    if (n1->getData () > n2->getData ())
+	      {
+		int temp = n1->getData ();
+		n1->setData (n2->getData ());
+		n2->setData (temp);
+	      }
+	    n1 = n1->getNext ();
+	    n2 = n2->getNext ();
+	  }
+      }
+  }
+void sortDescending2()
+  {
+    int length = getLenght ();
+    for (int i = 1; i <= length; i++)
+      {
+	Node *n1 = head;
+	Node *n2 = head->getNext ();
+	for (int o = 1; o <length; o++)
+	  {
+	    if (n1->getData () < n2->getData ())
+	      {
+		int temp = n1->getData ();
+		n1->setData (n2->getData ());
+		n2->setData (temp);
+	      }
+	    n1 = n1->getNext ();
+	    n2 = n2->getNext ();
+	  }
+      }
+  }
 };
 int main()
 {
